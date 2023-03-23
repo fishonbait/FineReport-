@@ -1,0 +1,11 @@
+点击参数面板的「下拉框控件」，为其添加一个「编辑后」事件，实现下拉框选择值后触发报表查询的功能，JavaScript 代码如下：
+_g().parameterCommit();
+有可能报错，可以添加延时，JavaScript代码如下：
+setTimeout(function() {
+_g().parameterCommit();
+}, 500)
+如果要实现用户未选择选项时展示默认值，可以直接点击参数界面空白处，将【点击查询前不显示报表内容】取消勾选。
+若要用JavaScript实现，可以添加一个[初始化后]事件，似乎必须添加延时：
+setTimeout(function() {
+_g().parameterCommit();
+}, 500)
